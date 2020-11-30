@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+               <span class="spinner-rotate"></span>
+          </div>
+     </section>
+        <br>
+        <main>
+          <header class="row tm-welcome-section">
+               <h1 class="col-12 text-center tm-section-title">DETAIL BUS YANG INGIN ANDA PESAN</h1>
+               
+          </header>
+          
+          <div class="w3-center">
+               <nav>
+                    <H2>SILAHKAN DIPILIH YANG ANDA PESAN<H2> 
+               </nav>
+          </div><br>
+
+          <!-- Gallery -->
+          <div class="row tm-gallery">
+               <!-- gallery page 1 -->
+               <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                         <figure class="w3-center">
+                              <img src="{% static 'sewabus/images/satu.jpg' %}" width="500px" height="500px">
+                            <div class="col-md-4">
+                               <div class="media-body blog-info">
+                                <h3><a href="blog-detail.html">PT SURYA INDAH</a></h3>
+                                <small><i class="fa fa-clock-o"></i> December 22, 2017</small>
+                                <p>Lorem ipsum dolor sit consectetur adipiscing morbi venenatis.</p>
+                                <a href="blog-detail.html" class="btn section-btn">View Detail</a>
+                               </div>
+                               <div class="w3-center">
+                                   <h4>Bandung - yogyakarta</h4>
+                                   <h4>Rp. 3.200.000</h4>
+                                   <p></p>
+                                   <a href="detail/" class="btn section-btn">View Detail</a>
+                              </div>
+                            </div>
+                            </div>
+                         </figure>
+                    </article>
+                    
+                </div>
+          </div>
+        
+        <br><br><br>
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-5 col-sm-12">
+                         <div class="footer-thumb footer-info"> 
+                              <h2>Hydro Company</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h2>Company</h2>
+                              <ul class="footer-link">
+                                   <li><a href="#">About Us</a></li>
+                                   <li><a href="#">Join our team</a></li>
+                                   <li><a href="#">Read Blog</a></li>
+                                   <li><a href="#">Press</a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h2>Services</h2>
+                              <ul class="footer-link">
+                                   <li><a href="#">Pricing</a></li>
+                                   <li><a href="#">Documentation</a></li>
+                                   <li><a href="#">Support</a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h2>Find us</h2>
+                              <p>123 Grand Rama IX, <br> Krung Thep Maha Nakhon 10400</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="footer-bottom">
+                              <div class="col-md-6 col-sm-5">
+                                   <div class="copyright-text"> 
+                                        <p>Copyright &copy; 2017 Your Company</p>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 col-sm-7">
+                                   <div class="phone-contact"> 
+                                        <p>Call us <span>(+66) 010-020-0340</span></p>
+                                   </div>
+                                   <ul class="social-icon">
+                                        <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-instagram"></a></li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+        </footer>
+
+{% endblock %}
