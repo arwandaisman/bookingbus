@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from . import models
 # from manga.form import FormManga
 from django.contrib import messages
+import base64
+import io
+from PIL import Image
 
 # Create your views here.
 def Bus (request): 
