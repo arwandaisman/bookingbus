@@ -6,7 +6,9 @@ from django.contrib import messages
 # import base64
 # import io
 # from PIL import Image
-from .forms import PostFormBus
+from .forms import BusForm
+from .models import DataBus
+from django.http import HttpResponse, HttpResponsePermanentRedirect
 
 # Create your views here.
 def Bus (request): 
@@ -19,11 +21,22 @@ def Bus (request):
                      {'hotel_images' : Hotels})) 
 
 def index (request):
-    return render(request, 'pengguna/index.html')
-
-def user(request):
+    tampil = models.DataBus.objects.all()
+    data = {
+        'data':tampil,
+    }   
+    return render(request,'pengguna/index.html',data)  
+    
+def detail(request, id):
+    tampil = models.DataBus.objects.filter(pk=id)
+    data = {
+        'data':tampil,
+    }   
+    return render(request,'pengguna/detail.html',data) 
+		
+# def user(request):
    
-    return render(request, 'pengguna/user.html')
+#     return render(request, 'pengguna/user.html')
 
 def tabel (request):
    
@@ -37,6 +50,31 @@ def icon (request):
 def typo (request):
    
     return render(request, 'pengguna/typo.html')
+
+def user(request): 
+    if request.method == 'POST':
+        form = BusForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = BusForm()
+            konteks = {
+                'form' : form,
+            }
+            return render(request, 'pengguna/user.html', konteks)
+    else:
+        form = BusForm()
+        konteks = {
+                'form' : form,
+            }
+        return render(request, 'pengguna/user.html', konteks)
+    # context = {} 
+    # context['form'] = BusForm 
+    # return render( request, "pengguna/user.html", context) 
+
+def hapus(request, id):
+    tampil = models.DataBus.objects.filter(pk=id).delete()
+    return redirect('index')
+
 
 # PENGAJAR
 

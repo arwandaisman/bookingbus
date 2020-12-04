@@ -147,7 +147,7 @@
                                     <p class="card-category">Isi Semua</p>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <!-- <form>
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <div class="form-group">
@@ -214,6 +214,10 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary pull-right" href="/tabel">SELESAI</button>
                                         <div class="clearfix"></div>
+                                    </form> -->
+                                    <form method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %} {{ form.as_p }}
+                                        <input type="submit" value="Submit">
                                     </form>
                                 </div>
                             </div>

@@ -1,0 +1,40 @@
+{% extends 'basesatu.html' %} {% block content %}
+
+<div class="container px-lg-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1 class="text-center">DETAIL</h1><br>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 310px;" class="bs-example">
+        <div class="card" style="width: 25rem;">
+            <ul class="list-group list-group-flush">
+                {% for d in data %}
+                <li class="list-group-item">Judul : {{d.judul}}</li>
+                <li class="list-group-item">Merk dan Seri Bus : {{d.merk_seri_bus}}</li>
+                <li class="list-group-item">Nomor Plat : {{d.no_plat}}</li>
+                <li class="list-group-item">Kategori : {{d.kategori}}</li>
+                <li class="list-group-item">Jumlah Kursi : {{d.jml_kursi}}</li>
+                <li class="list-group-item">AC : {{d.ac}}</li>
+                <li class="list-group-item">dvd : {{d.dvd}}</li>
+                <li class="list-group-item">Toilet : {{d.toilet}}</li>
+                <li class="list-group-item">Stop Kontak : {{d.stop_kontak}}</li>
+                <li class="list-group-item">Sabuk Pengaman : {{d.sabuk_pengaman}}</li>
+                <li class="list-group-item">Bagasi : {{d.bagasi}}</li>
+                <li class="list-group-item">WIFI : {{d.wifi}}</li>
+                <li class="list-group-item">TV : {{d.tv}}</li>
+                <li class="list-group-item">Bantal : {{d.bantal}}</li>
+                <li class="list-group-item">Selimut : {{d.selimut}}</li>
+                <li class="list-group-item">Smoking Area : {{d.smoking_area}}</li>
+                <li class="list-group-item">Tambahan : {{d.tambahan}}</li>
+                {% endfor %}
+            </ul>
+            <div class="card-body">
+                <a href="/pengguna" style="margin-left: 280px;" class="btn btn-danger" class="card-link">Back</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
