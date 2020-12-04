@@ -1,9 +1,16 @@
 from django.shortcuts import render
 from . import models
+from pengguna.models import Jenis, DataBus
 
 def index(req):
     # task = models.Pasien.objects.all()
-    return render(req, 'sewa/index.html')
+    # return render(req, 'sewa/index.html')
+
+    tampil = DataBus.objects.all()
+    data = {
+        'data':tampil,
+    }   
+    return render(req,'sewa/index.html',data) 
 
 
 def detail(req):
