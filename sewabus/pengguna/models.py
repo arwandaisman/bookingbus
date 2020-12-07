@@ -39,4 +39,22 @@ class DataBus(models.Model):
     
     
 
-        
+# class GambarBus(models.Model):
+#     gambar1 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar2 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar3 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar4 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar5 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar6 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar7 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar8 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar9 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar10 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar11 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar12 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar13 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar14 = models.ImageField(upload_to='static/image/',blank=True)
+#     gambar15 = models.ImageField(upload_to='static/image/',blank=True)
+    
+#     def __str__(self): 
+#         return self.gambar1
