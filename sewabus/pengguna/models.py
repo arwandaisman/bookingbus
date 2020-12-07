@@ -15,9 +15,10 @@ class Jenis(models.Model):
 class DataBus(models.Model):
     judul = models.CharField(max_length = 100,default=None)
     merk_seri_bus =  models.CharField(max_length = 100,default=None)
-    # tanggal_pembuatan =  models.DateField(default=None)
+    tahun_pembuatan =  models.IntegerField(default=None)
     no_plat = models.CharField(max_length = 15,default=None)
     kategori = models.ForeignKey(Jenis, on_delete=models.CASCADE, null=True)
+    harga = models.IntegerField(default=None)
     jml_kursi = models.IntegerField(default=None)
     ac = models.BooleanField("ac", default=False)
     dvd = models.BooleanField("DVD/Video", default=False)
@@ -30,7 +31,7 @@ class DataBus(models.Model):
     bantal = models.BooleanField("Bantal", default=False)
     selimut = models.BooleanField("Selimut", default=False)
     smoking_area = models.BooleanField("Smoking Area", default=False)
-    # img = models.ImageField(upload_to = "static/image/")
+    img = models.ImageField(upload_to='static/image/',blank=True)
     tambahan = models.TextField(default=None)
 
     def __str__(self): 
