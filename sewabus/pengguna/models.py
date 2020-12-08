@@ -20,6 +20,7 @@ class DataBus(models.Model):
     kategori = models.ForeignKey(Jenis, on_delete=models.CASCADE, null=True)
     harga = models.IntegerField(default=None)
     jml_kursi = models.IntegerField(default=None)
+    jml_bus= models.IntegerField(default=None)
     ac = models.BooleanField("ac", default=False)
     dvd = models.BooleanField("DVD/Video", default=False)
     toilet = models.BooleanField("Toilet", default=False)

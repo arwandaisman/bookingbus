@@ -143,41 +143,42 @@
                     </tr>
                 </thead>
             </table>
-
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
-                </thead>
-                <thead>
-                    <tr style="text-align: center;">
-                        <th>ID</th>
-                        <th>Judul</th>
-                        <th>Merk dan Seri Bus</th>
-                        <!-- <th>Tanggal Pembuatan Bus</th> -->
-                        <th>Nomor Plat</th>
-                        <th>Tahun Pembuatan</th>
-                        <th>Jumlah Kursi</th>
-                        <th>Harga</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for d in data %}
-                    <tr>
-                        <td style="text-align: center;">{{d.id}}</td>
-                        <td>{{d.judul}}</td>
-                        <td>{{d.merk_seri_bus}}</td>
-                        <!-- <td>{{d.tanggal_pembuatan}}</td> -->
-                        <td>{{d.no_plat}}</td>
-                        <td>{{d.tahun_pembuatan}}</td>
-                        <td>{{d.jml_kursi}}</td>
-                        <td>Rp {{d.harga}},-</td>
-                        <td style="text-align: center;">
-                            <a type="button" class="btn btn-primary" href="{{d.id}}/detail">Detail</a>
-                            <a type="button" class="btn btn-danger" href="{{d.id}}/hapus">Delete</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            <center>
+                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    </thead>
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th>ID</th>
+                            <th>Judul</th>
+                            <th>Merk dan Seri Bus</th>
+                            <!-- <th>Tanggal Pembuatan Bus</th> -->
+                            <th>Nomor Plat</th>
+                            <th>Tahun Pembuatan</th>
+                            <th>Jumlah Kursi</th>
+                            <th>Harga</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for d in data %}
+                        <tr>
+                            <td style="text-align: center;">{{d.id}}</td>
+                            <td>{{d.judul}}</td>
+                            <td>{{d.merk_seri_bus}}</td>
+                            <!-- <td>{{d.tanggal_pembuatan}}</td> -->
+                            <td>{{d.no_plat}}</td>
+                            <td>{{d.tahun_pembuatan}}</td>
+                            <td>{{d.jml_kursi}}</td>
+                            <td>Rp {{d.harga}},-</td>
+                            <td style="text-align: center;">
+                                <a type="button" class="btn btn-primary" href="{{d.id}}/detail">Detail</a>
+                                <a type="button" class="btn btn-danger" href="{{d.id}}/hapus">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </center>
         </div>
 
 
