@@ -8,21 +8,52 @@ from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpRespons
 
 
 def edit(request,id):
-    if request.POST:
-        models.DataBus.objects.filter(pk=id).update(
-        judul=request.POST['judul'],
-        # jumlah=request.POST['jumlah'],
-        # harga=request.POST['harga'],
-        # produksi=request.POST['produksi'],
-        # exp=request.POST['exp'],  
-        )
+    context ={}
+    obj = get_object_or_404(DataBus, id = id)
+    form = BusForm(request.POST or None, instance = obj)
+    if form.is_valid(): 
+        form.save() 
         return redirect('index')
-    tampil = models.DataBus.objects.filter(pk=id).first()
-    return render(request, 'pengguna/edit.html',
-    { 'data' : tampil,
-    })
+    context["form"] = form
+    return render(request, "pengguna/edit.html", context)
+    # if request.POST:
+    #     models.DataBus.objects.filter(pk=id).update(
+    #     # judul=request.POST['judul'],
+    #     # ac=request.POST['ac'],
+    #     # harga=request.POST['harga'],
+    #     # produksi=request.POST['produksi'],
+    #     # exp=request.POST['exp'],  
+    #     )
+    #     return redirect('index')
+    # tampil = models.DataBus.objects.filter(pk=id).first()
+    # return render(request, 'pengguna/edit.html',
+    # { 'data' : tampil,
+    # })
 
 
+def user(request): 
+    if request.method == 'POST':
+        form = BusForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = BusForm()
+            konteks = {
+                'form' : form,
+            }
+            return render(request, 'pengguna/user.html', konteks)
+    else:
+        form = BusForm()
+        konteks = {
+                'form' : form,
+            }
+        return render(request, 'pengguna/user.html', konteks)
+
+
+
+def hapus(request, id):
+    konteks = {}
+    tampil = models.DataBus.objects.filter(pk=id).delete()
+    return redirect('index')
 
 # # Create your views here.
 # def Bus (request): 
@@ -64,28 +95,3 @@ def icon (request):
 def typo (request):
    
     return render(request, 'pengguna/typo.html')
-
-def user(request): 
-    if request.method == 'POST':
-        form = BusForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form = BusForm()
-            konteks = {
-                'form' : form,
-            }
-            return render(request, 'pengguna/user.html', konteks)
-    else:
-        form = BusForm()
-        konteks = {
-                'form' : form,
-            }
-        return render(request, 'pengguna/user.html', konteks)
-    # context = {} 
-    # context['form'] = BusForm 
-    # return render( request, "pengguna/user.html", context) 
-
-def hapus(request, id):
-    konteks = {}
-    tampil = models.DataBus.objects.filter(pk=id).delete()
-    return redirect('index')
