@@ -234,6 +234,7 @@
                                                     <li class="list-group-item">Nomor Plat : {{d.no_plat}}</li>
                                                     <li class="list-group-item">Kategori : {{d.kategori}}</li>
                                                     <li class="list-group-item">Jumlah Kursi : {{d.jml_kursi}}</li>
+                                                    <li class="list-group-item">Jumlah Bus yang tersedia : {{d.jml_bus}}</li>
 
 
                                                     <li class="list-group-item">AC :
@@ -282,7 +283,8 @@
                                                         <!-- {{d.smoking_area}} -->
                                                         {% if not d.smoking_area %} Tidak Ada {% else %} Ada {% endif %}
                                                     </li>
-                                                    <li class="list-group-item">Tambahan : {{d.tambahan}}</li>
+                                                    <li class="list-group-item">Tambahan : {{d.tambahan}}
+                                                    </li>
                                                     {% endfor %}
                                                 </ul>
                                                 <div class="card-body">

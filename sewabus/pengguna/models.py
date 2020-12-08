@@ -13,11 +13,17 @@ class Jenis(models.Model):
 
 
 class DataBus(models.Model):
+    jenis_bus = (
+        ('kecil', 'Kecil'),
+        ('medium', 'Medium'),
+        ('besar', 'Besar'),
+    )
     judul = models.CharField(max_length = 100,default=None)
     merk_seri_bus =  models.CharField(max_length = 100,default=None)
     tahun_pembuatan =  models.IntegerField(default=None)
     no_plat = models.CharField(max_length = 15,default=None)
-    kategori = models.ForeignKey(Jenis, on_delete=models.CASCADE, null=True)
+    # kategori = models.ForeignKey(Jenis, on_delete=models.CASCADE, null=True)
+    kategori = models.CharField(max_length=10, choices=jenis_bus,default=None)
     harga = models.IntegerField(default=None)
     jml_kursi = models.IntegerField(default=None)
     jml_bus= models.IntegerField(default=None)
