@@ -6,22 +6,62 @@
             {% for d in data %}
 
             <h1>{{d.judul}}</h1>
+            {{d.img}}
             <li class="list-group-item">Merk dan Seri Bus : {{d.merk_seri_bus}}</li>
             <li class="list-group-item">Nomor Plat : {{d.no_plat}}</li>
             <li class="list-group-item">Kategori : {{d.kategori}}</li>
             <li class="list-group-item">Jumlah Kursi : {{d.jml_kursi}}</li>
-            <li class="list-group-item">AC : {{d.ac}}</li>
-            <li class="list-group-item">dvd : {{d.dvd}}</li>
-            <li class="list-group-item">Toilet : {{d.toilet}}</li>
-            <li class="list-group-item">Stop Kontak : {{d.stop_kontak}}</li>
-            <li class="list-group-item">Sabuk Pengaman : {{d.sabuk_pengaman}}</li>
-            <li class="list-group-item">Bagasi : {{d.bagasi}}</li>
-            <li class="list-group-item">WIFI : {{d.wifi}}</li>
-            <li class="list-group-item">TV : {{d.tv}}</li>
-            <li class="list-group-item">Bantal : {{d.bantal}}</li>
-            <li class="list-group-item">Selimut : {{d.selimut}}</li>
-            <li class="list-group-item">Smoking Area : {{d.smoking_area}}</li>
-            <li class="list-group-item">Tambahan : {{d.tambahan}}</li>
+            <li class="list-group-item">Jumlah Bus yang tersedia : {{d.jml_bus}}</li>
+
+
+            <li class="list-group-item">AC :
+                <!-- {{d.ac}} -->
+                {% if not d.ac %} Tidak Ada {% else %} Ada {% endif %}
+
+            </li>
+            <li class="list-group-item">DVD :
+                <!-- {{d.dvd}} -->
+                {% if not d.dvd %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">Toilet :
+                <!-- {{d.toilet}} -->
+                {% if not d.toilet %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">Stop Kontak :
+                <!-- {{d.stop_kontak}} -->
+                {% if not d.kontak %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">Sabuk Pengaman :
+                <!-- {{d.sabuk_pengaman}} -->
+                {% if not d.sabuk_pengaman %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">Bagasi :
+                <!-- {{d.bagasi}} -->
+                {% if not d.bagasi %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">WIFI :
+                <!-- {{d.wifi}} -->
+                {% if not d.wifi %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">TV :
+                <!-- {{d.tv}} -->
+                {% if not d.tv %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">Bantal :
+                <!-- {{d.bantal}} -->
+                {% if not d.bantal %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">Selimut :
+                <!-- {{d.selimut}} -->
+                {% if not d.selimut %} Tidak Ada {% else %} Ada {% endif %}
+
+            </li>
+            <li class="list-group-item">Smoking Area :
+                <!-- {{d.smoking_area}} -->
+                {% if not d.smoking_area %} Tidak Ada {% else %} Ada {% endif %}
+            </li>
+            <li class="list-group-item">Tambahan : {{d.tambahan}}
+            </li>
             {% endfor %}
         </ul>
         <div class="card-body">
