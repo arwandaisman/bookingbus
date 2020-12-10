@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'sewa',
     'pengguna',
+    'registration',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
