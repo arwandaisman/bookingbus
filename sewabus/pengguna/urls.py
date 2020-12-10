@@ -14,7 +14,6 @@ urlpatterns = [
     path('<id>/detail',views.detail, name='detail'),
     path('<id>/hapus',views.hapus, name='hapus'),
     path('<id>/edit',views.edit, name='edit'),
-    # path('editdata/<int:id>',views.edit),
     # path('tampilguru/', views.tampilguru, name='pengajar'),
     # path('detailguru/', views.detailguru, name='gdetail'),
     # path('detailmurid/', views.detailmurid, name='mdetail'),

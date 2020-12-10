@@ -5,11 +5,11 @@ class Hotel(models.Model):
     name = models.CharField(max_length=50) 
     hotel_Main_Img = models.ImageField(upload_to='images/') 
 
-class Jenis(models.Model):
-    jenis = models.CharField(max_length = 10)
+# class Jenis(models.Model):
+#     jenis = models.CharField(max_length = 10)
 
-    def __str__(self):
-        return self.jenis 
+#     def __str__(self):
+#         return self.jenis 
 
 
 class DataBus(models.Model):
@@ -38,7 +38,7 @@ class DataBus(models.Model):
     bantal = models.BooleanField("Bantal", default=False)
     selimut = models.BooleanField("Selimut", default=False)
     smoking_area = models.BooleanField("Smoking Area", default=False)
-    img = models.ImageField(upload_to='static/image/',blank=True)
+    img = models.ImageField(upload_to='gambar',blank=True)
     tambahan = models.TextField(default=None)
 
     def __str__(self): 

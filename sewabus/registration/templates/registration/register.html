@@ -1,9 +1,7 @@
 {% extends 'base.html' %} {% block content %}
-
-<br><br><br><br>
 <div class="container">
     <div class="row">
-        <div style="margin-top: 10px; margin-left: 360px;" class="col-md-4">
+        <div style="margin-top: 20%; margin-left: 30%;" class="col-md-4">
             <div class="card">
                 <div class="card-header">
                     Create New Account
@@ -11,7 +9,8 @@
                 <div class="card-body">
                     <form method="POST">
                         {% csrf_token %} {{form.as_p}}
-                        <button class="btn btn-primary">Register</button>
+                        <a href="/login" style="margin-left: 0%;"> sudah punya akun?</a>
+                        <button style="margin-left: 42%;" class="btn btn-primary">Daftar</button>
                     </form>
                 </div>
             </div>

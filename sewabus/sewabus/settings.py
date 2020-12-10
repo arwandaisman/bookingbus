@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+MEDIA_DIR = os.path.join(BASE_DIR,'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
+    # 'login',
+    'akun',
     'sewa',
     'pengguna',
     'registration',
+    'home',
+    
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -126,9 +129,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [STATIC_DIR,]
+# MEDIA_ROOT = MEDIA_DIR
+LOGIN_REDIRECT_URL = '/pengguna'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_URL = 'static/'
+LOGIN_URL = 'masuk'
+
+STATICFILES_DIRS = (
+os.path.join(BASE_DIR, 'static'),
+
+)
+
+
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'

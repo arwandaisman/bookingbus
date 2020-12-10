@@ -6,8 +6,8 @@ from django.contrib import admin
 # admin.site.register(models.pengajar)
 # admin.site.register(models.KtgAmpu)
 
-from pengguna.models import DataBus, Jenis
-
+from pengguna.models import DataBus
+# from pengguna.models import DataBus, Jenis
 # admin.site.register(DataBus)
 
 
@@ -19,7 +19,7 @@ class AdminBus(admin.ModelAdmin):
     # list_per_page = 4
 
 admin.site.register(DataBus, AdminBus)
-admin.site.register(Jenis)
+# admin.site.register(Jenis)
 
 
 

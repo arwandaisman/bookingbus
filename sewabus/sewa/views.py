@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . import models
-from pengguna.models import Jenis, DataBus
+from pengguna.models import DataBus
 
 def index(req):
     # task = models.Pasien.objects.all()
@@ -20,7 +20,6 @@ def detail(req, id):
     }   
 
     return render(req, 'sewa/detail.html',data)
-
 def biasa(req):
     # if req.POST:
     #     models.Pasien.objects.create(

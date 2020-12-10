@@ -1,305 +1,104 @@
 {% extends 'basesatu.html' %} {% load static %} {% block content %}
 
-<body class="">
-    <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="white" data-image="{% static 'sewabus/sewa/img/sidebar-1.jpg'%}">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
-            <div class="logo"><a href="/" class="simple-text logo-normal">
-          Booking Bus
-        </a></div>
-            <div class="sidebar-wrapper">
-                <ul class="nav">
-                    <li class="nav-item  ">
-                        <a class="nav-link" href="/pengguna">
-                            <i class="material-icons">dashboard</i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/pengguna/user">
-                            <i class="material-icons">person</i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/pengguna/tabel">
-                            <i class="material-icons">content_paste</i>
-                            <p>Table List</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./typography.html">
-                            <i class="material-icons">library_books</i>
-                            <p>Typography</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="icon/">
-                            <i class="material-icons">bubble_chart</i>
-                            <p>Icons</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./map.html">
-                            <i class="material-icons">location_ons</i>
-                            <p>Maps</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./rtl.html">
-                            <i class="material-icons">language</i>
-                            <p>RTL Support</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active-pro ">
-                        <a class="nav-link" href="./upgrade.html">
-                            <i class="material-icons">unarchive</i>
-                            <p>Upgrade to PRO</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="main-panel">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-                <div class="container-fluid">
-                    <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="javascript:;">User Profile</a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-                    <div class="collapse navbar-collapse justify-content-end">
-                        <form class="navbar-form">
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Search...">
-                                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-                            </div>
-                        </form>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:;">
-                                    <i class="material-icons">dashboard</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Stats
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
-                                    <p class="d-lg-none d-md-block">
-                                        Some Actions
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                                    <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                                    <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                                    <a class="dropdown-item" href="#">Another Notification</a>
-                                    <a class="dropdown-item" href="#">Another One</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">person</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Account
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                    <a class="dropdown-item" href="home/">Profile</a>
-                                    <a class="dropdown-item" href="#">Settings</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Log out</a>
-                                </div>
-                            </li>
-                        </ul>
+<body class="">
+
+    <!-- End Navbar -->
+    <div class="content">
+        <div class="container-fluid">
+            <center>
+                <h1>Selamat Datang Pada Menu Admin Bus</h1>
+                <h3>Data Semua Bus</h3>
+            </center>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h4 class="text-center">DETAIL</h4><br>
                     </div>
                 </div>
-            </nav>
-            <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="card">
-                                <div class="card-header card-header-primary">
-                                    <h4 class="card-title">POST BUS ANDA</h4>
-                                    <p class="card-category">Isi Semua</p>
-                                </div>
-                                <div class="card-body">
-                                    <!-- <form>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Nama Bus</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Harga Bus</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Jenis Bus</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Merek Bus</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Tahun Bus</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Fasilitas Bus</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Deskripsi Bus</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="avatar">Upload Gambar:</label><br>
-                                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary pull-right" href="/tabel">SELESAI</button>
-                                        <div class="clearfix"></div>
-                                    </form> -->
 
-                                    <div class="container px-lg-5">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-sm">
-                                                    <h1 class="text-center">DETAIL</h1><br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div style="margin-left: 310px;" class="bs-example">
-                                            <div class="card" style="width: 25rem;">
-                                                <ul class="list-group list-group-flush">
-                                                    {% for d in data %}
-                                                    <li class="list-group-item">Judul : {{d.judul}}</li>
-                                                    <li class="list-group-item">{{d.img}}</li>
-                                                    <li class="list-group-item">Merk dan Seri Bus : {{d.merk_seri_bus}}</li>
-                                                    <li class="list-group-item">Nomor Plat : {{d.no_plat}}</li>
-                                                    <li class="list-group-item">Kategori : {{d.kategori}}</li>
-                                                    <li class="list-group-item">Jumlah Kursi : {{d.jml_kursi}}</li>
-                                                    <li class="list-group-item">Jumlah Bus yang tersedia : {{d.jml_bus}}</li>
+                <div>
+                    <div class="card" style="width: 100%">
+                        <ul class="list-group list-group-flush">
+                            {% for d in data %}
+                            <li class="list-group-item">Judul : {{d.judul}}</li>
+                            <li class="list-group-item">{{d.img}}</li>
+                            <li class="list-group-item">Merk dan Seri Bus : {{d.merk_seri_bus}}</li>
+                            <li class="list-group-item">Nomor Plat : {{d.no_plat}}</li>
+                            <li class="list-group-item">Kategori : {{d.kategori}}</li>
+                            <li class="list-group-item">Jumlah Kursi : {{d.jml_kursi}}</li>
+                            <li class="list-group-item">Jumlah Bus yang tersedia : {{d.jml_bus}}</li>
 
 
-                                                    <li class="list-group-item">AC :
-                                                        <!-- {{d.ac}} -->
-                                                        {% if not d.ac %} Tidak Ada {% else %} Ada {% endif %}
+                            <li class="list-group-item">AC :
+                                <!-- {{d.ac}} -->
+                                {% if not d.ac %} Tidak Ada {% else %} Ada {% endif %}
 
-                                                    </li>
-                                                    <li class="list-group-item">DVD :
-                                                        <!-- {{d.dvd}} -->
-                                                        {% if not d.dvd %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">Toilet :
-                                                        <!-- {{d.toilet}} -->
-                                                        {% if not d.toilet %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">Stop Kontak :
-                                                        <!-- {{d.stop_kontak}} -->
-                                                        {% if not d.kontak %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">Sabuk Pengaman :
-                                                        <!-- {{d.sabuk_pengaman}} -->
-                                                        {% if not d.sabuk_pengaman %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">Bagasi :
-                                                        <!-- {{d.bagasi}} -->
-                                                        {% if not d.bagasi %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">WIFI :
-                                                        <!-- {{d.wifi}} -->
-                                                        {% if not d.wifi %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">TV :
-                                                        <!-- {{d.tv}} -->
-                                                        {% if not d.tv %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">Bantal :
-                                                        <!-- {{d.bantal}} -->
-                                                        {% if not d.bantal %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">Selimut :
-                                                        <!-- {{d.selimut}} -->
-                                                        {% if not d.selimut %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">DVD :
+                                <!-- {{d.dvd}} -->
+                                {% if not d.dvd %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">Toilet :
+                                <!-- {{d.toilet}} -->
+                                {% if not d.toilet %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">Stop Kontak :
+                                <!-- {{d.stop_kontak}} -->
+                                {% if not d.kontak %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">Sabuk Pengaman :
+                                <!-- {{d.sabuk_pengaman}} -->
+                                {% if not d.sabuk_pengaman %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">Bagasi :
+                                <!-- {{d.bagasi}} -->
+                                {% if not d.bagasi %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">WIFI :
+                                <!-- {{d.wifi}} -->
+                                {% if not d.wifi %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">TV :
+                                <!-- {{d.tv}} -->
+                                {% if not d.tv %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">Bantal :
+                                <!-- {{d.bantal}} -->
+                                {% if not d.bantal %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">Selimut :
+                                <!-- {{d.selimut}} -->
+                                {% if not d.selimut %} Tidak Ada {% else %} Ada {% endif %}
 
-                                                    </li>
-                                                    <li class="list-group-item">Smoking Area :
-                                                        <!-- {{d.smoking_area}} -->
-                                                        {% if not d.smoking_area %} Tidak Ada {% else %} Ada {% endif %}
-                                                    </li>
-                                                    <li class="list-group-item">Tambahan : {{d.tambahan}}
-                                                    </li>
-                                                    {% endfor %}
-                                                </ul>
-                                                <div class="card-body">
-                                                    <a href="/pengguna" style="margin-left: 280px;" class="btn btn-danger" class="card-link">Back</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </li>
+                            <li class="list-group-item">Smoking Area :
+                                <!-- {{d.smoking_area}} -->
+                                {% if not d.smoking_area %} Tidak Ada {% else %} Ada {% endif %}
+                            </li>
+                            <li class="list-group-item">Tambahan : {{d.tambahan}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="card-body">
+                            <a href="/pengguna" style="margin-left: 90%;" class="btn btn-danger" class="card-link">Back</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-</body>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="copyright float-right">
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>,BOCBUS <i class="material-icons">favorite</i> --
+            </div>
+        </div>
+    </footer>
+    </div>
+    </div>
 
-{% endblock %}
+    {% endblock %}
