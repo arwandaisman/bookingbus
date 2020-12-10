@@ -14,7 +14,7 @@ def index(req):
 
 
 def detail(req):
-    tampil = DataBus.objects.all(pk=id)
+    tampil = DataBus.objects.filter(pk=id)
     data = {
         'data':tampil,
     }   
