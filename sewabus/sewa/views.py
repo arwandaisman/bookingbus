@@ -13,8 +13,8 @@ def index(req):
     return render(req,'sewa/index.html',data) 
 
 
-def detail(req):
-    tampil = models.DataBus.objects.filter(pk=id)
+def detail(req, id):
+    tampil = DataBus.objects.filter(pk=id)
     data = {
         'data':tampil,
     }   
