@@ -135,47 +135,121 @@
                             <p class="card-category">Isi Semua</p>
                         </div>
                         <div class="card-body">
-                            <!-- <form>
+                            <!-- <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Nama Bus</label>
-                                            <input type="text" class="form-control">
+                                            <label class="bmd-label-floating">Judul</label>
+                                            <input type="text" class="form-control" name="judul">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Harga Bus</label>
-                                            <input type="text" class="form-control">
+                                            <label class="bmd-label-floating">Merk dan Seri Bus</label>
+                                            <input type="text" class="form-control" name="merk_seri_bus">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Merek Bus</label>
-                                            <input type="text" class="form-control">
+                                            <label class="bmd-label-floating">Tahun Pembuatan (Min. 2015)</label>
+                                            <input type="number" class="form-control" name="tahun_pembuatan" min="2015" max="2050" value="2015">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Merek Bus</label>
-                                            <input type="text" class="form-control">
+                                            <label class="bmd-label-floating">Nomor Plat Kendaraan</label>
+                                            <input type="text" class="form-control" name="no_plat">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Kategori</label>
+                                            <br>
+                                            <input type="radio" id="kecil" name="kategori" value="kecil">
+                                            <label for="male">Kecil</label><br>
+                                            <input type="radio" id="medium" name="kategori" value="medium">
+                                            <label for="female">Medium</label><br>
+                                            <input type="radio" id="besar" name="kategori" value="besar">
+                                            <label for="other">Besar</label><br><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Harga</label>
+                                            <input type="number" value="100000" class="form-control" name="harga" min="100000" max="1000000000">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Jumlah Kursi</label>
+                                            <input type="number" class="form-control" name="jml_kursi">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Jumlah Bus yang Tersedia</label>
+                                            <input type="number" class="form-control" name="jml_bus" value="1" min="1" max="1000">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><label class="bmd-label-floating"><b>Fasilitas</b></label><br></div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <!-- <label class="bmd-label-floating"><b>Fasilitas</b></label><br> -->
+                            <!-- <input type="checkbox" id="ac" name="ac" value="ac">
+                                            <label for="ac"> AC</label><br>
+                                            <input type="checkbox" id="dvd" name="dvd" value="dvd">
+                                            <label for="dvd"> DVD Player</label><br>
+                                            <input type="checkbox" id="toilet" name="toilet" value="toilet">
+                                            <label for="toilet"> Toilet</label><br>
+                                            <input type="checkbox" id="stop_kontak" name="stop_kontak" value="stop_kontak">
+                                            <label for="stop_kontak"> Stop Kontak</label><br>
+                                            <input type="checkbox" id="sabuk_pengaman" name="sabuk_pengaman" value="sabuk_pengaman">
+                                            <label for="sabuk_pengaman"> Sabuk Pengaman</label><br>
+                                            <input type="checkbox" id="bagasi" name="bagasi" value="bagasi">
+                                            <label for="bagasi"> Bagasi</label><br>
+                                            <input type="checkbox" id="wifi" name="wifi" value="wifi">
+                                            <label for="wifi"> WIFI</label><br>
+                                            <input type="checkbox" id="tv" name="tv" value="tv">
+                                            <label for="tv"> Televisi</label><br>
+                                            <input type="checkbox" id="bantal" name="bantal" value="bantal">
+                                            <label for="bantal"> Bantal</label><br>
+                                            <input type="checkbox" id="selimut" name="selimut" value="selimut">
+                                            <label for="selimut"> Selimut</label><br>
+                                            <input type="checkbox" id="smoking_area" name="smoking_area" value="smoking_area">
+                                            <label for="smoking_area"> Smoking Area</label><br>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Deskripsi Bus</label>
-                                            <input type="text" class="form-control">
+                                            <label class="bmd-label-floating">Keterangan Tambahan</label>
+                                            <input type="text" class="form-control" name="tambahan">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+                            <!-- 
                                 <div>
                                     <form>
                                         <div class="form-group">
@@ -183,12 +257,12 @@
                                             <input type="file" class="form-control-file" id="exampleFormControlFile1">
                                         </div>
                                     </form>
-                                </div>
-                                <div class="row">
+                                </div> -->
+                            <!-- <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="avatar">Upload Gambar:</label><br>
-                                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                                            <button> <label>Upload Gambar:</label><br></button>
+                                            <input type="file" id="img" name="img" accept="image/png, image/jpeg">
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +271,11 @@
                             </form> -->
 
                             <form method="POST" enctype="multipart/form-data">
-                                {% csrf_token %} {{ form.as_p }}
+                                {% csrf_token %}
+                                <!-- User Id : -->
+                                <!-- <input type="number" class="form-control" name="po_id" value="{{user.id}}" disabled="disabled"> -->
+                                <br> {{ form.as_p }}
+                                <br><br>
                                 <input type="submit" value="Submit">
                             </form>
                         </div>

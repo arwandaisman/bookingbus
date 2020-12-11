@@ -8,7 +8,6 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    
     path('sewa/', include('sewa.urls')),
     path('pengguna/', include('pengguna.urls')),
     path('login/', LoginView.as_view(), name='masuk'),

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Hotel(models.Model): 
@@ -20,11 +21,11 @@ class DataBus(models.Model):
     )
     judul = models.CharField(max_length = 100,default=None)
     merk_seri_bus =  models.CharField(max_length = 100,default=None)
-    tahun_pembuatan =  models.IntegerField(default=None)
+    tahun_pembuatan =  models.IntegerField(default=2015)
     no_plat = models.CharField(max_length = 15,default=None)
     # kategori = models.ForeignKey(Jenis, on_delete=models.CASCADE, null=True)
-    kategori = models.CharField(max_length=10, choices=jenis_bus,default=None)
-    harga = models.IntegerField(default=None)
+    kategori = models.CharField(max_length=10, choices=jenis_bus,default=None, null=True)
+    harga = models.IntegerField(default=100000)
     jml_kursi = models.IntegerField(default=None)
     jml_bus= models.IntegerField(default=None)
     ac = models.BooleanField("ac", default=False)
@@ -39,7 +40,11 @@ class DataBus(models.Model):
     selimut = models.BooleanField("Selimut", default=False)
     smoking_area = models.BooleanField("Smoking Area", default=False)
     img = models.ImageField(upload_to='gambar',blank=True)
-    tambahan = models.TextField(default=None)
+    tambahan = models.TextField(default=None,null=True)
+    # po_id = models.IntegerField(blank=True, null = True)
+    po_id = models.ForeignKey(User, on_delete = models.DO_NOTHING,related_name='po_id')
+    # owner = models.ForeignKey(User, on_delete = models.DO_NOTHING,related_name='mahasiswa')
+   
 
     def __str__(self): 
         return self.judul 

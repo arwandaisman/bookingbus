@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django import forms
 from .models import DataBus
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
   
 # Create your views here. 
 # def Bus(request): 
@@ -79,9 +81,15 @@ from .models import DataBus
 #     ) 
 
 class BusForm(forms.ModelForm): 
+    # po_id = forms.IntegerField()
+    # po_id = forms.IntegerField(widget=forms.NumberInput(attrs={'value':user.id}))
     class Meta: 
         model = DataBus 
-        fields = "__all__"
+        exclude = ['po_id']
+        # fields = "__all__"
+        # wedgets ={
+        #     'po_id' : 'user.id'
+        # }
 
         # widgets = {
         #     'judul' : forms.TextInput({'class':'form-control'}),
@@ -91,3 +99,13 @@ class BusForm(forms.ModelForm):
         #     'kategori' : forms.Select({'class':'form-control'}),
             
         # }
+# class PoForm(forms.Form):
+#     po_id = forms.IntegerField()
+    # wedgets ={
+    #         'po_id' : 'user.id'
+    #     }
+
+
+# forms.Form):
+#     class Meta:
+#         fields = ['po_id']
