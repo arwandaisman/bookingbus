@@ -49,6 +49,7 @@ def user(request):
     if request.POST:
         form = BusForm(request.POST, request.FILES)
         if form.is_valid():
+            image = form.instance
             form.instance.po_id = request.user
             form.save()
             messages.success(request, 'Data telah ditambahkan.')
