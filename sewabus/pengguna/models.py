@@ -39,7 +39,7 @@ class DataBus(models.Model):
     bantal = models.BooleanField("Bantal", default=False)
     selimut = models.BooleanField("Selimut", default=False)
     smoking_area = models.BooleanField("Smoking Area", default=False)
-    img = models.ImageField(upload_to='gambar',blank=True)
+    img = models.ImageField(upload_to='gambar/',blank=True)
     tambahan = models.TextField(default=None,null=True)
     # po_id = models.IntegerField(blank=True, null = True)
     po_id = models.ForeignKey(User, on_delete = models.DO_NOTHING,related_name='po_id')

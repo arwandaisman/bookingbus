@@ -14,7 +14,6 @@ def detail(req, id):
     data = {
         'data':tampil,
     }   
-
     return render(req, 'sewa/detail.html',data)
 def biasa(req):
     return render(req, 'sewa/biasa.html')
