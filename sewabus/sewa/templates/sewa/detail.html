@@ -11,7 +11,7 @@
 
                 <h1>{{d.judul}}</h1>
                 <div class="w3-display-container mySlides">
-                    <img src="{{d.img.url}}" style="width: 350px;border: 2px solid blue;" />
+                    <img src="{{d.img.url}}" width = "460" height="300"/>
                     <button class="w3-button w3-display-left w3-blue" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="w3-button w3-display-right w3-blue" onclick="plusDivs(1)">&#10095;</button>
                 </div>
@@ -78,7 +78,7 @@
             </ul>
             <div class="card-body">
                 <a href="{% url 'tambah'%}" style="margin-left: 280px;" class="btn btn-danger" class="card-link">Pesan</a><br><br>
-                <a href="sewa/" style="margin-left: 280px;" class="btn btn-danger" class="card-link">Kembali</a>
+                <a href="/sewa/" style="margin-left: 280px;" class="btn btn-danger" class="card-link">Kembali</a>
             </div>
             </div>
             </div>
