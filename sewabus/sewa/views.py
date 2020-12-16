@@ -15,9 +15,23 @@ def detail(req, id):
         'data':tampil,
     }   
     return render(req, 'sewa/detail.html',data)
-def biasa(req):
-    return render(req, 'sewa/biasa.html')
+def tambah(req):
+    return render(req, 'sewa/tambah.html')
 
-def rinci(req):
-    return render(req, 'sewa/rinci.html')
-    
+# def rinci(req):
+#     return render(req, 'sewa/rinci.html')
+
+# def Tambah(req):
+#     if req.POST:
+#         models.Sewa.objects.create(
+#         nama_pemesan=req.POST['nama_pemesan'],
+#         no_ktp=req.POST['no_ktp'],
+#         alamat=req.POST['alamat'],
+#         intstalasi=req.POST['intstalasi'],
+#         jabatan=req.POST[' jabatan'],
+#         no_hp=req.POST[' no_hp'], )
+#         return redirect('/pengguna/user.html')
+#     task = models.Sewa.objects.all()
+#     return render(req, 'sewa/tambah.html',
+#     { 'data' : task,
+#     })
