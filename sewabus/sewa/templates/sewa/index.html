@@ -1,6 +1,4 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <!-- PRE LOADER -->
 <section class="preloader">
@@ -38,7 +36,7 @@
         <tr>
             <div class="w3-third">
                 <div class="w3-card">
-                    <br><img src="{{ d.img.url }}" width="400" height="250"/>
+                    <br><img src="{{ d.img.url }}" width="400" height="250" />
                     <!-- <br><img src="media/{{d.gambar}}" style="width:92%"> -->
 
                     <div class="w3-center">
@@ -48,7 +46,7 @@
                         <h4>Kapasitas : {{d.jml_kursi}} kursi</h4>
                         <!-- <h4>Android Entertainment</h4> -->
                         <h4>Tahun {{d.tahun_pembuatan}}</h4>
-                        <h4>Rp {{d.harga}},-</h4>
+                        <h4>Rp {{d.harga_12jam}} - Rp {{d.harga_fullday}}</h4>
                         <a href="{{d.id}}/detail" class="btn section-btn">Selengkapnya</a>
                     </div>
                     <br>

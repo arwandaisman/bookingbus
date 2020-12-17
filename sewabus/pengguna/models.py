@@ -66,3 +66,19 @@ class Images(models.Model):
         return self.post.no_plat + " Image"
     
 
+class Profil(models.Model):
+    nama_perusahaan = models.CharField(max_length = 100,default=None)
+    foto_profil = models.ImageField(upload_to='gambar/',blank=True)
+    tanggal_berdiri =  models.DateField()
+    no_tlpn = models.CharField(max_length = 15,default=False, blank=True  )
+    no_hp = models.CharField(max_length = 15,default=+62 )
+    email = models.EmailField(max_length=254, default=None, null=True)
+    provinsi = models.CharField(max_length=50, default=False)
+    kabupaten_kota= models.CharField(max_length = 15,default=False)
+    kecamatan = models.CharField(max_length=50, default=False)
+    kode_pos = models.IntegerField(default=False)
+    alamat_lengkap = models.TextField(default=None,null=True)
+    bio= models.TextField(default=None,blank=True)
+    
+    def __str__(self):
+        return self.nama_perusahaan

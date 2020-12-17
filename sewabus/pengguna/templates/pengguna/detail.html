@@ -21,12 +21,17 @@
                     <div class="card" style="width: 100%">
                         <ul class="list-group list-group-flush">
                             {% for d in data %}
-                            <li class="list-group-item">Judul : {{d.judul}}</li>
-                            <li class="list-group-item"><img src="{{d.img.url}}"></li>
-                            <li class="list-group-item">Merk dan Seri Bus : {{d.merk_seri_bus}}</li>
+                            <li class="list-group-item">
+                                <h3>Judul : {{d.judul}}</h3>
+                            </li>
+                            <center>
+                                <li class="list-group-item"><img src="{{d.img.url}}" height="50%"></li>
+                            </center>
+                            <li class="list-group-item">Merk Bus : {{d.merk_seri_bus}}</li>
                             <li class="list-group-item">Nomor Plat : {{d.no_plat}}</li>
                             <li class="list-group-item">Kategori : {{d.kategori}}</li>
-                            <li class="list-group-item">Harga : RP {{d.harga}},-</li>
+                            <li class="list-group-item">Harga/12jam : RP {{d.harga_12jam}},-</li>
+                            <li class="list-group-item">Harga/12jam : RP {{d.harga_fullday}},-</li>
                             <li class="list-group-item">Jumlah Kursi : {{d.jml_kursi}}</li>
                             <li class="list-group-item">Jumlah Bus yang tersedia : {{d.jml_bus}}</li>
 
@@ -79,19 +84,20 @@
                             </li>
                             <li class="list-group-item">Tambahan : {{d.tambahan}}
                             </li>
-                            </li>
+
                             <li class="list-group-item">User : {{d.po_id}}</li>
 
-                            {% endfor %}
+
                         </ul>
-                        <div class="row gallery">
+                        <!-- <div class="row gallery">
                             {% for p in image %}
                             <img src="{{ p.image.url }}" alt="Image Not Found" width="300px"> {% endfor %}
-                        </div>
-                        <div class="card-body">
-                            <a href="/pengguna" style="margin-left: 90%;" class="btn btn-danger" class="card-link">Back</a>
-                        </div>
-                    </div>
+                        </div> -->
+                        <!-- <div class="card-body"> -->
+                        <a href="/pengguna" class="btn btn-danger" class="card-link">Back</a>
+                        <a href="/pengguna/{{d.id}}/edit" class="btn btn-primary" class="card-link">Edit</a>
+                        <!-- </div> -->
+                    </div>{% endfor %}
                 </div>
             </div>
         </div>

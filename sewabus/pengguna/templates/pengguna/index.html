@@ -1,6 +1,4 @@
-{% extends 'basesatu.html' %} 
-{% load static %}
-{% block content %}
+{% extends 'basesatu.html' %} {% load static %} {% block content %}
 
 
 <body class="">
@@ -36,7 +34,8 @@
                                         <th>Nomor Plat</th>
                                         <th>Tahun Pembuatan</th>
                                         <th>Jumlah Kursi</th>
-                                        <th>Harga</th>
+                                        <th>Harga/12Jam</th>
+                                        <th>Harga/hari</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -50,7 +49,8 @@
                                         <td>{{d.no_plat}}</td>
                                         <td>{{d.tahun_pembuatan}}</td>
                                         <td>{{d.jml_kursi}}</td>
-                                        <td>Rp {{d.harga}},-</td>
+                                        <td>Rp {{d.harga_12jam}},-</td>
+                                        <td>Rp {{d.harga_fullday}},-</td>
                                         <td style="text-align: center;">
                                             <a type="button" class="btn btn-primary" href="{{d.id}}/detail">Detail</a>
                                             <a type="button" class="btn btn-warning" href="{{d.id}}/edit">Edit</a>
@@ -64,18 +64,18 @@
                         </center>
                     </div>
                 </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="copyright float-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>,BOCBUS <i class="material-icons">favorite</i> by --
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="copyright float-right">
+                            &copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>,BOCBUS <i class="material-icons">favorite</i> by --
+                        </div>
                     </div>
-                </div>
-            </footer>
+                </footer>
+            </div>
         </div>
-    </div>
 
 
-    {% endblock %}
+        {% endblock %}

@@ -82,7 +82,10 @@ def user(request):
     # }
     # return render(request, 'pengguna/user.html', context)
 
-        
+def profil (request):
+    return render(request, 'pengguna/profil.html')
+
+
 def hapus(request, id):
     konteks = {}
     tampil = models.DataBus.objects.filter(pk=id).delete()
