@@ -22,7 +22,7 @@
                         <ul class="list-group list-group-flush">
                             {% for d in data %}
                             <li class="list-group-item">Judul : {{d.judul}}</li>
-                            <li class="list-group-item">{{d.img}}</li>
+                            <li class="list-group-item"><img src="{{d.img.url}}"></li>
                             <li class="list-group-item">Merk dan Seri Bus : {{d.merk_seri_bus}}</li>
                             <li class="list-group-item">Nomor Plat : {{d.no_plat}}</li>
                             <li class="list-group-item">Kategori : {{d.kategori}}</li>
@@ -80,9 +80,14 @@
                             <li class="list-group-item">Tambahan : {{d.tambahan}}
                             </li>
                             </li>
-                            <li class="list-group-item">IDPO : {{d.po_id}}</li>
+                            <li class="list-group-item">User : {{d.po_id}}</li>
+
                             {% endfor %}
                         </ul>
+                        <div class="row gallery">
+                            {% for p in image %}
+                            <img src="{{ p.image.url }}" alt="Image Not Found" width="300px"> {% endfor %}
+                        </div>
                         <div class="card-body">
                             <a href="/pengguna" style="margin-left: 90%;" class="btn btn-danger" class="card-link">Back</a>
                         </div>

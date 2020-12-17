@@ -19,13 +19,24 @@ class DataBus(models.Model):
         ('medium', 'Medium'),
         ('besar', 'Besar'),
     )
+
+    merk_seri_bus = (
+        ('Scania', 'Scania'),
+        ('Hino', 'Hino'),
+        ('Mercedez Benz', 'Mercedez Benz'),
+        ('Volvo', 'Volvo'),
+        ('Mitsubishi Fuso', 'Mitsubishi Fuso'),
+        ('Toyota Dyana', 'Toyota Dyana'),
+        ('Zhong Thong', 'Zhong Thong'),
+    )
+
     judul = models.CharField(max_length = 100,default=None)
-    merk_seri_bus =  models.CharField(max_length = 100,default=None)
+    merk_seri_bus =  models.CharField(max_length = 100,choices=merk_seri_bus,default=None, null=True)
     tahun_pembuatan =  models.IntegerField(default=2015)
     no_plat = models.CharField(max_length = 15,default=None)
-    # kategori = models.ForeignKey(Jenis, on_delete=models.CASCADE, null=True)
     kategori = models.CharField(max_length=10, choices=jenis_bus,default=None, null=True)
-    harga = models.IntegerField(default=100000)
+    harga_12jam = models.IntegerField(default=500000)
+    harga_fullday = models.IntegerField(default=1000000)
     jml_kursi = models.IntegerField(default=None)
     jml_bus= models.IntegerField(default=None)
     ac = models.BooleanField("ac", default=False)
@@ -41,32 +52,17 @@ class DataBus(models.Model):
     smoking_area = models.BooleanField("Smoking Area", default=False)
     img = models.ImageField(upload_to='gambar/',blank=True)
     tambahan = models.TextField(default=None,null=True)
-    # po_id = models.IntegerField(blank=True, null = True)
     po_id = models.ForeignKey(User, on_delete = models.DO_NOTHING,related_name='po_id')
-    # owner = models.ForeignKey(User, on_delete = models.DO_NOTHING,related_name='mahasiswa')
-   
+    
 
     def __str__(self): 
         return self.judul 
-    
+      
+class Images(models.Model):
+    post = models.ForeignKey(DataBus, default=None, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to = 'gambar/', blank=True, null = True)
+ 
+    def __str__(self):
+        return self.post.no_plat + " Image"
     
 
-# class GambarBus(models.Model):
-#     gambar1 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar2 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar3 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar4 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar5 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar6 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar7 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar8 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar9 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar10 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar11 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar12 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar13 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar14 = models.ImageField(upload_to='static/image/',blank=True)
-#     gambar15 = models.ImageField(upload_to='static/image/',blank=True)
-    
-#     def __str__(self): 
-#         return self.gambar1
