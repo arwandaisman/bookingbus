@@ -50,9 +50,9 @@ class DataBus(models.Model):
     bantal = models.BooleanField("Bantal", default=False)
     selimut = models.BooleanField("Selimut", default=False)
     smoking_area = models.BooleanField("Smoking Area", default=False)
-    img = models.ImageField(upload_to='gambar/',blank=True)
+    # img = models.ImageField(upload_to='gambaru/',blank=True)
     tambahan = models.TextField(default=None,null=True)
-    po_id = models.ForeignKey(User, on_delete = models.DO_NOTHING,related_name='po_id')
+    po_id = models.ForeignKey(User, on_delete = models.DO_NOTHING,related_name='po_id',)
     
 
     def __str__(self): 
@@ -61,6 +61,7 @@ class DataBus(models.Model):
 class Images(models.Model):
     post = models.ForeignKey(DataBus, default=None, on_delete=models.CASCADE)
     image = models.ImageField(upload_to = 'gambar/', blank=True, null = True)
+    # t_id=models.IntegerField(blank=True,null=True)
  
     def __str__(self):
         return self.post.no_plat + " Image"

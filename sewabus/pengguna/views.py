@@ -40,47 +40,48 @@ def edit(request,id):
 
 
 def user(request): 
-    tasks = DataBus.objects.filter(po_id=request.user)
-    form = BusForm()
-    if request.POST:
-        form = BusForm(request.POST, request.FILES)
-        if form.is_valid():
-            image = form.instance
-            form.instance.po_id = request.user
-            form.save()
-            messages.success(request, 'Data telah ditambahkan.')
-        return redirect('user')
+    # tasks = DataBus.objects.filter(po_id=request.user)
+    # form = BusForm()
+    # if request.POST:
+    #     form = BusForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         image = form.instance
+    #         form.instance.po_id = request.user
+    #         form.save()
+    #         messages.success(request, 'Data telah ditambahkan.')
+    #     return redirect('user')
         
-    return render(request, 'pengguna/user.html',{
-        'form': form,
-        'data': tasks,
-    })
-    # ImageFormSet = modelformset_factory(Images, fields = ('image',), extra=4)
-    # if request.method == 'POST':
-    #     form = BusForm(request.POST)
-    #     formset = ImageFormSet(request.POST or None, request.FILES or None)
-    #     if form.is_valid() and formset.is_valid():
-    #         post = form.save(commit=False)
-    #         post.user = request.user
-    #         post.save()
+    # return render(request, 'pengguna/user.html',{
+    #     'form': form,
+    #     'data': tasks,
+    # })
+    ImageFormSet = modelformset_factory(Images, fields = ('image',), extra=4)
+    if request.method == 'POST':
+        formx = BusForm(request.POST)
+        formset = ImageFormSet(request.POST or None, request.FILES or None)
+        if formx.is_valid() and formset.is_valid():
+            post = formx.save(commit=False)
+            post.po_id = request.user
+            post.save()
 
-    #         for form in formset.cleaned_data:
-    #             try:
-    #                 images = form['image']
-    #                 photo = Images(post=post, images=images)
-    #                 photo.save()
-    #             except print(0):
-    #                 break
+            for form in formset:
+                try:
+                    # image = form['image']
+                    photo = Images(post=post, image=form.cleaned_data['image'])
+                    photo.save()
+                    
+                except Exception as e:
+                    break
+        return redirect('index')
+    else:
+        formx = BusForm()
+        formset = ImageFormSet(queryset=Images.objects.none())
 
-    # else:
-    #     form = BusForm()
-    #     formset = ImageFormSet(queryset=Images.objects.none())
-
-    # context = {
-    #     'form': form, 
-    #     'formset': formset
-    # }
-    # return render(request, 'pengguna/user.html', context)
+    context = {
+        'formx': formx, 
+        'formset': formset
+    }
+    return render(request, 'pengguna/user.html', context)
 
 def profil (request):
     return render(request, 'pengguna/profil.html')

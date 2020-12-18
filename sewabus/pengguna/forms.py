@@ -1,5 +1,4 @@
 
-from django.shortcuts import render, redirect 
 from .forms import *
 from django import forms
 from .models import DataBus,Images
@@ -22,9 +21,3 @@ class BusForm(forms.ModelForm):
         
 
     # }
-
-class BusForm(forms.ModelForm): 
-   
-    class Meta: 
-        model = DataBus 
-        fields = "__all__"

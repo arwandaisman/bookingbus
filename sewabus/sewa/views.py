@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . import models
-from pengguna.models import DataBus
+from pengguna.models import DataBus, Images
 
 def index(req):
     # task = models.Pasien.objects.all()
@@ -8,13 +8,24 @@ def index(req):
     tampil = DataBus.objects.all()   
     return render(req,'sewa/index.html',{'tampil':tampil}) 
 
-
+    
 def detail(req, id):
     tampil = DataBus.objects.filter(pk=id)
+    image = Images.objects.all()
     data = {
         'data':tampil,
+        'image' : image,
     }   
-    return render(req, 'sewa/detail.html',data)
+    return render(req,'sewa/detail.html',data) 
+# def detail(req, id):
+#     tampil = DataBus.objects.filter(pk=id)
+#     image = Images.objects.all()
+#     data = {
+#         'data':tampil,
+#         'image':image,
+#     }   
+#     return render(req, 'sewa/detail.html',data)
+
 def tambah(req):
     return render(req, 'sewa/tambah.html')
 
